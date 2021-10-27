@@ -1,0 +1,50 @@
+#app {
+    -fx-background-image:url('./Image/bg3.jpg');
+}
+
+VBox{
+    -fx-background-color: linear-gradient(#ec538d, #0d034a);
+}
+
+#txtSearch {
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, #ec538d, 10, 0, 2, 2);
+}
+
+#voiceOutGG, #voiceOutTTS {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+VBox Button,MenuButton{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-border: none;
+    -fx-border-radius: 10%;
+    -fx-background-radius: 10%;
+}
+
+#searchGG, #voiceGG{
+    -fx-effect: dropshadow(three-pass-box, #ec538d, 10, 0, 1, 1);
+    -fx-background-color: #fff;
+    -fx-cursor: hand;
+    -fx-border: none;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+}
+
+VBox Button:hover,MenuButton:hover, Button:hover{
+    -fx-background-color: #f3f3f3;
+    -fx-border-radius: 10%;
+    -fx-background-radius: 10%;
+    -fx-opacity: 0.9;
+}
+
+VBox Button:hover {
+    -fx-effect: dropshadow(three-pass-box, #ec538d, 10, 0, 1, 1);
+}
+
+#listViewOut {
+    -fx-border-radius: 25;
+}

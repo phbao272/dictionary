@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <MenuBar prefHeight="20.0" prefWidth="775.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="634.0" prefWidth="98.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView disable="true" fitHeight="99.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/dictionary.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#openAddWindow" prefHeight="50.0" prefWidth="60.0" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets top="15.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/add-circle-line%20(4).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="modifyButton" maxWidth="-Infinity" mnemonicParsing="false" onAction="#openModifyWindow" prefHeight="50.0" prefWidth="60.0" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets top="15.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/edit-2-fill%20(1).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#openRemoveWindow" prefHeight="50.0" prefWidth="60.0" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets top="15.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <ImageView fx:id="imgBin" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/delete-bin-6-line%20(1).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            <Button fx:id="changeButton" mnemonicParsing="false" onAction="#changeMode" prefHeight="50.0" prefWidth="60.0" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/arrow-left-right-fill.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#SaveFile" prefHeight="50.0" prefWidth="60.0" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/save-3-line.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane fx:id="infoRight" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="638.0" prefWidth="766.0" BorderPane.alignment="TOP_LEFT">
+            <children>
+            <TextArea fx:id="txtHistory" editable="false" layoutX="377.0" layoutY="436.0" maxWidth="1.7976931348623157E308" prefHeight="180.0" prefWidth="370.0" wrapText="true" />
+
+                <TextField fx:id="txtSearch" layoutX="15.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#textChange" prefHeight="43.0" prefWidth="625.0" promptText="Bạn muốn tra từ gì?">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+                <TextArea fx:id="txtOutput" editable="false" layoutX="377.0" layoutY="116.0" maxWidth="1.7976931348623157E308" prefHeight="302.0" prefWidth="370.0" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
+                <Label layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="150.0" text="Dictionary" textFill="#ffdb00">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Button fx:id="searchGG" alignment="TOP_CENTER" layoutX="653.0" layoutY="53.0" mnemonicParsing="false" onAction="#searchWithGG" prefHeight="41.0" prefWidth="45.0" />
+            <TextArea fx:id="txtSuggest" editable="false" layoutX="15.0" layoutY="116.0" prefHeight="500.0" prefWidth="340.0">
+               <font>
+                  <Font size="15.0" />
+               </font></TextArea>
+            <Button fx:id="voiceOutTTS" layoutX="705.0" layoutY="116.0" mnemonicParsing="false" onAction="#VoiceTextToSpeech" prefHeight="38.0" prefWidth="46.0" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/volume-up-line.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text fx:id="mode" fill="#ffdb00" layoutX="166.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EN-VN" />
+            <Text fill="WHITE" layoutX="377.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lịch sử tìm kiếm">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+            <Button fx:id="voiceGG" alignment="TOP_CENTER" layoutX="705.0" layoutY="54.0" mnemonicParsing="false" onAction="#VoiceSearchWithGG" prefHeight="41.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView disable="true" fitHeight="38.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/VoiceGoogleIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+                <ImageView disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="661.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/SearchGoogleIcon.png" />
+                    </image>
+                </ImageView>
+            <Button fx:id="voiceOutGG" alignment="TOP_CENTER" layoutX="705.0" layoutY="376.0" mnemonicParsing="false" onAction="#VoiceOutputWithGG" prefHeight="41.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView disable="true" fitHeight="38.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/VoiceGoogleIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            </children>
+        </AnchorPane>
+    </center>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+</BorderPane>
